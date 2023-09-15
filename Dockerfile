@@ -3,7 +3,7 @@ FROM tiangolo/uvicorn-gunicorn:python3.10
 RUN useradd --create-home runner
 
 RUN mkdir -p /database /data
-RUN chown -R runner:runner /databases /data
+RUN chown -R runner:runner /database /data
 
 USER runner
 RUN export PATH=/home/runner/.local/bin:$PATH
