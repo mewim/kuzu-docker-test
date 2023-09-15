@@ -6,7 +6,7 @@ RUN mkdir -p /database /data
 RUN chown -R runner:runner /database /data
 
 USER runner
-RUN export PATH=/home/runner/.local/bin:$PATH
+ENV PATH="${PATH}:/home/runner/.local/bin"
 RUN pip install fastapi "uvicorn[standard]" kuzu pandas numpy
 
 # Copy source code
